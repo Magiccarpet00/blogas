@@ -26,11 +26,9 @@ $configuration = [
 ];
 
 // Création du dispatcher
-
 $app = new \Slim\App($configuration);
 
 // Définition des routes
-
 $app->get('/billet/{id}',
           '\blogapp\controleur\BilletControleur:affiche')
     ->setName('billet_aff');
