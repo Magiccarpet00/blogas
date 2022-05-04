@@ -17,6 +17,13 @@ class UtilisateurControleur {
         return $rs;
     }
 
+    //J'ai dupliquer la methode du dessus en changean NOUVEAU_VUE mais ça ne marche pas
+    public function connexion($rq, $rs, $args) {
+        $bl = new UtilisateurVue($this->cont, null, UtilisateurVue::NOUVEAU_CONNEXION);
+        $rs->getBody()->write($bl->render());
+        return $rs;
+    }
+
     public function cree($rq, $rs, $args) {
         // Récupération variable POST + nettoyage
         $nom = filter_var($rq->getParsedBodyParam('nom'), FILTER_SANITIZE_STRING);

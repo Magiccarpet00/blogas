@@ -45,4 +45,8 @@ $app->post('/createutil',
           '\blogapp\controleur\UtilisateurControleur:cree')
     ->setName('util_cree');
 
+$app->post('/connexion',
+    '\blogapp\controleur\UtilisateurControleur:connexion')
+    ->setName('util_connexion');
+
 $app->run();
