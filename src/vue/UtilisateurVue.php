@@ -6,7 +6,8 @@ use blogapp\vue\Vue;
 
 class UtilisateurVue extends Vue {
     const NOUVEAU_VUE = 1;
-    
+    const NOUVEAU_CONNEXION = 2;
+
     public function render() {
         switch($this->selecteur) {
         case self::NOUVEAU_VUE:
@@ -44,18 +45,12 @@ YOP;
     public function connexion() {
         return <<<YOP
         <form method="post" action="{$this->cont['router']->pathFor('util_connexion')}">
-        <h1>CONNEXION</h1>
-          pseudo
-          <input type="text" name="pseudo"><br>
-          nom
-          <input type="text" name="nom"><br>
-          prenom
-          <input type="text" name="prenom"><br>
+        <h1>CONNEXION</h1>          
           mail
           <input type="text" name="mail"><br>
           mot de passe
           <input type="password" name="mot de passe"><br>
-          <input type="submit" value="Validation">
+          <input type="submit" value="connexion">
         </form>
 YOP;
     }
